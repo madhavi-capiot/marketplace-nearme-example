@@ -6,7 +6,7 @@ const homePage = new HomePage();
 const layoutPage = new LayoutPage();
 const actualURL = homePage.getPageUrl();
 
-fixture('Homepage').page(layoutPage.URL.staging);
+fixture('Homepage').page(process.env.MP_URL);
 
 test('There are links to sign up and log in', async t => {
   await t

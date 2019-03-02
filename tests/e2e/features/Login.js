@@ -11,7 +11,7 @@ const layoutPage = new LayoutPage();
 const notifications = new Notifications();
 const homePage = new HomePage();
 
-fixture('Log in').page(layoutPage.URL.staging);
+fixture('Log in').page(process.env.MP_URL);
 
 test('Display error message on invalid password', async t => {
   await logIn.login('test@placek.com', 'wrongpassword');

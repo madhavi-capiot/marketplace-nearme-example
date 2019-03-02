@@ -9,7 +9,7 @@ const simplePage = new SimplePage();
 const homePage = new HomePage();
 const documentation = new Documentation();
 
-fixture('Simple page').page(layoutPage.URL.staging);
+fixture('Simple page').page(process.env.MP_URL);
 
 test.skip('There is a link to the documentation', async t => {
   await t.click(homePage.link.simplePage).click(simplePage.link.documentation);

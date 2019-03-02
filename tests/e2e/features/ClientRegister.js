@@ -4,6 +4,7 @@ import HomePage from '../page-objects/Homepage';
 import Register from '../page-objects/Register';
 import LogIn from '../page-objects/Login';
 import Notifications from '../page-objects/Notifications';
+import { checkLiquidErrors } from '@platform-os/testcafe-helpers';
 
 const homePage = new HomePage();
 const layoutPage = new LayoutPage();
@@ -22,10 +23,10 @@ const userName = userData.NAME;
 const userEmail = userData.USER_EMAIL;
 const userPass = userData.PASSWORD;
 
-fixture('Register as client').page(layoutPage.URL.staging);
+fixture('Register as client').page(process.env.MP_URL);
 
-test('There are no liquid errors on the page', async () => {
-  await layoutPage.checkLiquidErrors();
+test('There are no liquid errors on the page', async t => {
+  await checkLiquidErrors({ t });
 });
 
 test('Create client account', async t => {

@@ -9,7 +9,7 @@ const homePage = new HomePage();
 // const module = new Module();
 const documentation = new Documentation();
 
-fixture('Module').page(layoutPage.URL.staging);
+fixture('Module').page(process.env.MP_URL);
 
 test.skip('There is a link to the documentation', async t => {
   await t.click(homePage.link.module).click(module.link.documentation);

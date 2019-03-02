@@ -9,7 +9,7 @@ const updateProfile = new UpdateProfile();
 const homePage = new HomePage();
 const documentation = new Documentation();
 
-fixture('Update profile').page(layoutPage.URL.staging);
+fixture('Update profile').page(process.env.MP_URL);
 
 test.skip('There is a link to the documentation', async t => {
   await t.click(homePage.link.uploadFiles).click(updateProfile.link.documentation);

@@ -11,7 +11,7 @@ const stripe = new Stripe();
 const homePage = new HomePage();
 const documentation = new Documentation();
 
-fixture('Stripe').page(layoutPage.URL.staging);
+fixture('Stripe').page(process.env.MP_URL);
 
 test.skip('There is a link to the documentation', async t => {
   await logIn.login('test_user@test.com', 'password');
