@@ -1,4 +1,4 @@
-import 'testcafe';
+import { Selector } from 'testcafe';
 import LayoutPage from '../page-objects/Layout';
 import HomePage from '../page-objects/Homepage';
 import Register from '../page-objects/Register';
@@ -26,7 +26,7 @@ const userPass = userData.PASSWORD;
 fixture('Register as client').page(process.env.MP_URL);
 
 test('There are no liquid errors on the page', async t => {
-  await checkLiquidErrors({ t });
+  await checkLiquidErrors({ t, Selector });
 });
 
 test('Create client account', async t => {

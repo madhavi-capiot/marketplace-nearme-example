@@ -1,4 +1,4 @@
-import 'testcafe';
+import { Selector } from 'testcafe';
 import Contacts from '../page-objects/Contacts';
 import LayoutPage from '../page-objects/Layout';
 import Notifications from '../page-objects/Notifications';
@@ -21,7 +21,7 @@ const description = contactData.DESCRIPTION;
 fixture('Contacts').page(contacts.URL.staging);
 
 test('There are no liquid errors on the page', async t => {
-  await checkLiquidErrors({ t });
+  await checkLiquidErrors({ t, Selector });
 });
 
 test('Add new contact to the list', async t => {

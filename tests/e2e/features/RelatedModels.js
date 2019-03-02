@@ -1,4 +1,4 @@
-import 'testcafe';
+import { Selector } from 'testcafe';
 import HomePage from '../page-objects/Homepage';
 import RelatedModels from '../page-objects/RelatedModels';
 import { checkLiquidErrors } from '@platform-os/testcafe-helpers';
@@ -10,7 +10,7 @@ fixture('Loading related models while avoiding n+1 queries').page(process.env.MP
 
 test('There are no liquid errors on the page', async t => {
   await t.click(homePage.link.models);
-  await checkLiquidErrors({ t });
+  await checkLiquidErrors({ t, Selector });
 });
 
 test('Loading related models while avoiding n+1 queries. Increase speed 10x', async t => {

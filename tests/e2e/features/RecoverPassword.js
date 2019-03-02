@@ -1,4 +1,4 @@
-import 'testcafe';
+import { Selector } from 'testcafe';
 import LogIn from '../page-objects/Login';
 import Notifications from '../page-objects/Notifications';
 import RecoverPassword from '../page-objects/RecoverPassword';

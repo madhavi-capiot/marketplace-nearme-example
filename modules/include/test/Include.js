@@ -1,5 +1,4 @@
 import { Selector } from 'testcafe';
-
 import { getResultText } from '@platform-os/testcafe-helpers';
 
 fixture('Include tag and exports tag').page(`${process.env.MP_URL}/include`);

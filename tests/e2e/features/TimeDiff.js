@@ -1,4 +1,4 @@
-import 'testcafe';
+import { Selector } from 'testcafe';
 import HomePage from '../page-objects/Homepage';
 import RelatedModels from '../page-objects/RelatedModels';
 import { checkLiquidErrors } from '@platform-os/testcafe-helpers';
@@ -10,7 +10,7 @@ fixture('Measuring execution time of liquid code fragments').page(process.env.MP
 
 test('There are no liquid errors on the page', async t => {
   await t.click(homePage.link.timeDiff);
-  await checkLiquidErrors({ t });
+  await checkLiquidErrors({ t, Selector });
 });
 
 test('Measuring execution time of liquid code fragments (time_diff)', async t => {

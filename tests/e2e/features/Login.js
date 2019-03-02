@@ -1,4 +1,4 @@
-import 'testcafe';
+import { Selector } from 'testcafe';
 import LayoutPage from '../page-objects/Layout';
 import LogIn from '../page-objects/Login';
 import Register from '../page-objects/Register';

@@ -1,4 +1,4 @@
-import 'testcafe';
+import { Selector } from 'testcafe';
 import Feedback from './page-object.js';
 
 const feedback = new Feedback();

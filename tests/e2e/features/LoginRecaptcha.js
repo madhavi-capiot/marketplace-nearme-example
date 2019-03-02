@@ -1,4 +1,4 @@
-import 'testcafe';
+import { Selector } from 'testcafe';
 import Register from '../page-objects/Register';
 import LogInRecaptcha from '../page-objects/LoginRecaptcha';
 import Notifications from '../page-objects/Notifications';
@@ -11,7 +11,7 @@ const notifications = new Notifications();
 fixture('Log In Recaptcha').page(logInRecaptcha.URL.staging);
 
 test('There are no liquid errors on the page', async t => {
-  await checkLiquidErrors({ t });
+  await checkLiquidErrors({ t, Selector });
 });
 
 test('Log in to the Dashboard with Recaptcha', async t => {

@@ -1,4 +1,5 @@
-import 'testcafe';
+import { Selector } from 'testcafe';
+
 import LogIn from '../page-objects/Login';
 import Notifications from '../page-objects/Notifications';
 import UpdateProfile from '../page-objects/UpdateProfile';
@@ -16,7 +17,7 @@ test('There are no liquid errors on the page', async t => {
   await logIn.login('test_user@test.com', 'password');
   await t.expect(notifications.messageType.success.innerText).eql(notifications.text.login);
   await t.click(homePage.link.uploadFiles);
-  await checkLiquidErrors({ t });
+  await checkLiquidErrors({ t, Selector });
 });
 
 test('Direct upload using AJAX', async t => {

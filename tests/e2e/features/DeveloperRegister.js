@@ -1,4 +1,4 @@
-import 'testcafe';
+import { Selector } from 'testcafe';
 import LayoutPage from '../page-objects/Layout';
 import HomePage from '../page-objects/Homepage';
 import Register from '../page-objects/Register';
@@ -27,7 +27,7 @@ const userPhone = userData.TELEPHONE_NUMBER;
 fixture('Register as developer').page(process.env.MP_URL);
 
 test('There are no liquid errors on the page', async t => {
-  await checkLiquidErrors({ t });
+  await checkLiquidErrors({ t, Selector });
 });
 
 test('Create developer account', async t => {
